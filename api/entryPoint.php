@@ -1,5 +1,5 @@
 <?php
-//header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *');
 //declare(strict_types=1);
 //require_once 'Modules/domainOrigin.php';
 if(1/*domainOrigin() === true*/){

@@ -1,11 +1,12 @@
 <?php
-function uploadImage($data){
+function uploadImage($source){
+		$data = $source->file;
 	     $repertoireUpload = '../medias/images/';
 	     list($type, $data) = explode(';base64,', $data, 2);
 	     $data = str_replace(' ', '+', $data);
 	     $source = imagecreatefromstring(base64_decode($data));
 	     $rotate = imagerotate($source,0,0);
-	     $salt = 'rgorl'.mt_rand().'g$*danaid'.time();
+	     $salt = 'rgorl'.mt_rand().'g$*astorprotect'.time();
 	     $salt = str_shuffle($salt);
 	     $imageName = openssl_digest($salt,'sha512').'.jpeg';
 	     file_put_contents($repertoireUpload.$imageName,$data);
